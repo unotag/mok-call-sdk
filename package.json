@@ -4,6 +4,9 @@
   "type": "module",
   "source": "src/index.js",
   "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "require": "./dist/index.cjs",
     "default": "./dist/index.modern.js"
