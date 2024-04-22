@@ -1,6 +1,6 @@
 {
   "name": "mok-call-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "source": "src/index.js",
   "description": "",
@@ -16,7 +16,7 @@
   "unpkg": "./dist/index.umd.js",
   "scripts": {
     "build": "microbundle",
-    "release": "yarn build && changeset publish"
+    "release": "changeset publish"
   },
   "keywords": [],
   "author": "Unotag Gamification Platform",
