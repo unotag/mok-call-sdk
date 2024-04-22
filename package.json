@@ -1,12 +1,30 @@
 {
   "name": "mok-call-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "type": "module",
+  "source": "src/index.js",
   "description": "",
-  "main": "index.js",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle",
+    "release": "yarn build && changeset publish"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Unotag Gamification Platform",
+  "license": "ISC",
+  "dependencies": {
+    "@changesets/cli": "^2.27.1",
+    "eventemitter3": "^5.0.1",
+    "isomorphic-ws": "^5.0.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  }
 }
