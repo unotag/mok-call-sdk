@@ -13,9 +13,9 @@ class AudioWsClient extends EventEmitter {
     // let endpoint = (audioWsConfig.customEndpoint || baseEndpoint) ;//+ audioWsConfig.callId;
     let endpoint = (audioWsConfig.customEndpoint || baseEndpoint) + "/" +audioWsConfig.callId;
     console.log("Endpoint for audio ws is  " + endpoint);
-    if (audioWsConfig.enableUpdate) {
-      endpoint += "?enable_update=true";
-    }
+    endpoint += "?enable_update=true";
+    endpoint += `&template_id=${audioWsConfig.template_id}`
+    console.log("Endpoint for audio ws is with template id  " + endpoint);
     this.ws = new WebSocket(endpoint);
     this.ws.binaryType = "arraybuffer";
     this.ws.onopen = () => {
@@ -224,7 +224,8 @@ class MokAudioClient extends EventEmitter {
       this.liveClient = new AudioWsClient({
         callId: startConversationConfig.callId,
         enableUpdate: startConversationConfig.enableUpdate,
-        customEndpoint: this.customEndpoint.customEndpoint
+        customEndpoint: this.customEndpoint.customEndpoint,
+        template_id: startConversationConfig.template_id
       });
       this.handleAudioEvents();
       this.isCalling = true;
