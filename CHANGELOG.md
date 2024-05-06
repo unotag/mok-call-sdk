@@ -1,5 +1,11 @@
 # mok-call-sdk
 
+## 1.0.4
+
+### Patch Changes
+
+- cd68971: template id support added
+
 ## 1.0.3
 
 ### Patch Changes
